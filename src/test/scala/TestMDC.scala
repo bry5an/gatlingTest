@@ -123,8 +123,8 @@ class TestMDC extends Simulation {
 			.get("/dataapi/data/Dashboards?$filter=(ApplicationUser_Id%20eq%20guid%27626ca629-ab51-4be5-ab18-eef82bfcc70d%27)%20and%20((IsActive%20eq%20true)%20and%20(IsDeleted%20eq%20false))&$orderby=Title&"))
 
 		
-		
-			setUp(scn.inject(constantUsersPerSec(1) during(1 minute)))
+		setUp(scn.inject(atOnceUsers(1)))
+			// setUp(scn.inject(constantUsersPerSec(1) during(1 minute)))
 			// setUp(scn.inject(rampUsers(400) over(5 seconds)))
 			.protocols(httpProtocol)
 }
