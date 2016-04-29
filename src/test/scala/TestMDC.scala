@@ -124,8 +124,8 @@ class TestMDC extends Simulation {
 
 		
 		
-			// setUp(scn.inject(constantUsersPerSec(4) during(1 minute)))
-			setUp(scn.inject(rampUsers(400) over(5 seconds)))
+			setUp(scn.inject(constantUsersPerSec(1) during(1 minute)))
+			// setUp(scn.inject(rampUsers(400) over(5 seconds)))
 			.protocols(httpProtocol)
 }
 
